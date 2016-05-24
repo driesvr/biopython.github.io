@@ -48,6 +48,8 @@ left for another article.
 
 ``` python
 from Bio.PDB import PDBParser
+from Bio.PDB import Residue
+
 import xpdb   # this is the module described below
 
 # read
@@ -145,7 +147,7 @@ class SloppyStructureBuilder(Bio.PDB.StructureBuilder.StructureBuilder):
                                  % (field, resseq, icode, self.line_counter) +
                                  ".... assigning new resid %d.\n"
                                  % self.max_resseq)
-        residue = Residue(res_id, resname, self.segid)
+        residue = Residue.Residue(res_id, resname, self.segid)
         self.chain.add(residue)
         self.residue = residue
 
